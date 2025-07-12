@@ -1,7 +1,7 @@
 import express from 'express';
 import Answer from '../models/Answer.js';
 import Question from '../models/Question.js';
-import Notification from '../models/Notification.js';
+import Notification from '../models/notification.js';
 const router = express.Router();
 
 router.post('/:qid', async (req, res) => {

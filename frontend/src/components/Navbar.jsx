@@ -1,31 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { NotificationBell } from './NotificationBell';
 
-export default function Navbar() {
-  const handleLogout = () => {
-    localStorage.clear();
-    window.location.href = '/';
-  };
-
+const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center px-6 py-3 bg-gray-100 shadow">
-      <Link to="/" className="text-xl font-bold text-blue-600">
-        StackIt
-      </Link>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+      <Link className="navbar-brand" to="/">StackIt</Link>
 
-      <div className="flex items-center gap-4">
-        <Link to="/ask" className="text-blue-600 font-medium">
-          Ask Question
-        </Link>
-        <NotificationBell />
-        <button
-          onClick={handleLogout}
-          className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
-        >
-          Logout
-        </button>
+      <div className="collapse navbar-collapse">
+        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <li className="nav-item">
+            <Link className="nav-link" to="/">Home</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/ask">Ask</Link>
+          </li>
+        </ul>
+        <ul className="navbar-nav ms-auto">
+          <li className="nav-item">
+            <Link className="nav-link" to="/login">Login</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/register">Register</Link>
+          </li>
+        </ul>
       </div>
     </nav>
   );
-}
+};
+
+export default Navbar;

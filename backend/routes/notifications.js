@@ -1,5 +1,5 @@
 import express from 'express';
-import Notification from '../models/Notification.js';
+import Notification from '../models/notification.js';
 import authMiddleware from '../middleware/authMiddleware.js'; // Middleware to verify JWT & set req.user
 
 const router = express.Router();
